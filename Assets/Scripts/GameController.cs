@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour {
     public Vector2 nextPos;
     public Text scoreText;
 
+    public float timer = .25f;
+
     private void OnEnable()
     {
         Snake.hit += hit;
@@ -30,7 +32,7 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        InvokeRepeating("TimerInvoke", 0f, .5f);
+        InvokeRepeating("TimerInvoke", 0f, timer);
         FoodFunction();
 	}
 
